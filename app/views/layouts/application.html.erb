@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ComicmarketTest2</title>
+  <title>コミックスペシャル６</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <style type="text/css">
+  footer{  /* 背景色(黒) */
+	width:100%;               /* 横の幅を100% */
+/*	height: 120px;            /* 縦の幅を120px */
+	position: absolute;       /* 絶対位置指定することを定義 */
+	bottom: 0px;              /* 絶対位置指定(左0px,下0px) */
+	padding: 10px 0;          /* 上下に余白を取る */
+	border: 5px solid #fff; /* 表示領域を白枠で囲う */
+/*	height: 100px;          /* 縦幅の指定100px */
+	width: 970px;           /* 横の幅970px */
+	margin: auto;   
+  }
+  </style>
 </head>
 <body>
 <% if notice %>
@@ -14,6 +27,8 @@
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
 <%= yield %>
+<footer>
 
+</footer>
 </body>
 </html>
