@@ -2,8 +2,8 @@
 
 <h1>コミックスペシャル６</h1>
 <p>ようこそ！</p>
-
-<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+<%= link_to "サークルリスト",'circles'%>
+<%= link_to "ログアウト", destroy_user_session_path, :method => :delete %>
 
 <footer>
 	<p>ログイン中のユーザ : <%= current_user.username%></p>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+	<strong>サークル名:</strong>
+	 <%= @circle.name %>
+</p>
+
+<p>
+	<strong>URL:</strong>
+	<%= link_to @circle.url, @circle.url %>
+</p>
+
+<%= link_to 'サークル登録', edit_circle_path(@circle) %> |
+<%= link_to '戻る', circles_path %>
