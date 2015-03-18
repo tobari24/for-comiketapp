@@ -1,0 +1,22 @@
+# encoding: utf-8
+	<p>
+		<strong>お品物:</strong>
+		<%= @item.itemname %>
+	</p>
+	<p>
+		<strong>価格</strong>
+		<%= @item.price %>円
+	</p>
+
+	<h2>購入数を入力してください。:</h2>
+	<%= form_for([@item, @item.orders.build]) do |f| %>
+	
+			<%= f.hidden_field :user_id,  :value => @user_id %>
+		<p>
+			<%= f.label '購入数' %>
+			<%= f.number_field :quantity %>
+		</p>
+		<p>
+			<%= f.submit '登録'%>
+		</p>
+	<% end %>

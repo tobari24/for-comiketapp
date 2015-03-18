@@ -2,11 +2,16 @@ Rails.application.routes.draw do
   
 
   resources :circles do
-  resources :items
   member do
     get :circlelist
   end
+  resources :items
+  
 end
+
+resources :items do
+    resources :orders
+  end
 
   devise_for :users
   get 'homes/index'

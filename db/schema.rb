@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150318081504) do
+ActiveRecord::Schema.define(version: 20150318092740) do
 
   create_table "circles", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -31,6 +31,17 @@ ActiveRecord::Schema.define(version: 20150318081504) do
   end
 
   add_index "items", ["circle_id"], name: "index_items_on_circle_id", using: :btree
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "quantity",   limit: 4
+    t.integer  "user_id",    limit: 4
+    t.integer  "item_id",    limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "orders", ["item_id"], name: "index_orders_on_item_id", using: :btree
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: ""
@@ -53,4 +64,6 @@ ActiveRecord::Schema.define(version: 20150318081504) do
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
   add_foreign_key "items", "circles"
+  add_foreign_key "orders", "items"
+  add_foreign_key "orders", "users"
 end

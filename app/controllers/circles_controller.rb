@@ -32,7 +32,7 @@ class CirclesController < ApplicationController
 
     respond_to do |format|
       if @circle.save
-        format.html { redirect_to @circle, notice: 'Circle was successfully created.' }
+        format.html { redirect_to @circle, notice: '1件のサークルを登録しました。' }
         format.json { render :show, status: :created, location: @circle }
       else
         format.html { render :new }
@@ -47,7 +47,7 @@ class CirclesController < ApplicationController
   def update
     respond_to do |format|
       if @circle.update(circle_params)
-        format.html { redirect_to @circle, notice: 'Circle was successfully updated.' }
+        format.html { redirect_to @circle, notice: 'サークル情報を更新しました。' }
         format.json { render :show, status: :ok, location: @circle }
       else
         format.html { render :edit }
@@ -61,7 +61,7 @@ class CirclesController < ApplicationController
   def destroy
     @circle.destroy
     respond_to do |format|
-      format.html { redirect_to circles_url, notice: 'Circle was successfully destroyed.' }
+      format.html { redirect_to circles_url, notice: '削除しました。' }
       format.json { head :no_content }
     end
   end
@@ -78,6 +78,6 @@ class CirclesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def circle_params
-      params.require(:circle).permit(:name, :url)
+      params.require(:circle).permit(:name, :url, :date, :space)
     end
 end

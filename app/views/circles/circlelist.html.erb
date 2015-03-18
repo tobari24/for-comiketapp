@@ -14,15 +14,15 @@
 	<tr>
 		<td><%= circle.date %></td>
 		<td><%= circle.space %></td>
-		<td><%= circle.circlename %></td>
+		<td><%= circle.name %></td>
 		<td><%= link_to circle.url, circle.url %></td>
 		
 		<% @circle = Circle.find(circle) %>
-	<% @circle.items.each do |item| %>
-		<td><%= item.itemname %></td>
-		<td><%= item.price %></td>
-		<td><%= link_to 'お品書き',circle_items_path(circle)  %>
+		<% @circle.items.each do |item| %>
+			<td><%= item.itemname %></td>
+			<td><%= item.price %></td>
 		<% end %>
+		<td><%= link_to 'お品書き',circle_items_path(circle)  %>
 	</tr>
 	<% end %>
 	</table>
