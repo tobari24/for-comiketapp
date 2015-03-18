@@ -1,12 +1,16 @@
 class CirclesController < ApplicationController
   before_action :set_circle, only: [:show, :edit, :update, :destroy]
+  before_action :set_circlelist, only: [:circlelist]
 
   # GET /circles
   # GET /circles.json
   def index
     @circles = Circle.all
   end
-
+  
+  def circlelist
+    @circles = Circle.where(date: params[:id])
+  end
   # GET /circles/1
   # GET /circles/1.json
   def show
@@ -37,6 +41,7 @@ class CirclesController < ApplicationController
     end
   end
 
+
   # PATCH/PUT /circles/1
   # PATCH/PUT /circles/1.json
   def update
@@ -66,6 +71,10 @@ class CirclesController < ApplicationController
     def set_circle
       @circle = Circle.find(params[:id])
     end
+
+  def set_circlelist
+    @circles = Circle.where(date: [:id])
+  end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def circle_params

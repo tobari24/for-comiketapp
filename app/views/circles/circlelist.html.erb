@@ -1,0 +1,30 @@
+# encoding: utf-8
+<h1>サークルリスト</h1>
+<%= @test %>
+<table>
+	<tr>
+		<th>1日目</th>
+		<th>スペース</th>
+		<th>サークル名</th>
+		<th>URL</th>
+		<th>item</th>
+	</tr>
+
+	<% @circles.each do |circle| %>
+	<tr>
+		<td><%= circle.date %></td>
+		<td><%= circle.space %></td>
+		<td><%= circle.circlename %></td>
+		<td><%= link_to circle.url, circle.url %></td>
+		
+		<% @circle = Circle.find(circle) %>
+	<% @circle.items.each do |item| %>
+		<td><%= item.itemname %></td>
+		<td><%= item.price %></td>
+		<td><%= link_to 'お品書き',circle_items_path(circle)  %>
+		<% end %>
+	</tr>
+	<% end %>
+	</table>
+	<%= link_to 'サークル新規登録', new_circle_path %>
+	

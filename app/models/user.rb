@@ -7,6 +7,6 @@ class User < ActiveRecord::Base
 validates :username, presence: true, uniqueness: true
  
 
-  		attr_accessor :name
+  		attr_accessor :username
 
 end

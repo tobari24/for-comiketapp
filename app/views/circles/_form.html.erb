@@ -1,3 +1,4 @@
+# encoding: utf-8
 <%= form_for(@circle) do |f| %>
 
   <% if @circle.errors.any? %>
@@ -13,14 +14,22 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label '日付' %><br>
+    <%= f.number_field :date %>
+  </div>
+  <div class="field">
+    <%= f.label 'スペース' %><br>
+    <%= f.text_field :space %>
+  </div>
+  <div class="field">
+    <%= f.label 'サークル名' %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :url %><br>
+    <%= f.label 'URL' %><br>
     <%= f.text_field :url %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit '登録' %>
   </div>
 <% end %>

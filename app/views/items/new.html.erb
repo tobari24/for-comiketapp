@@ -1,7 +1,7 @@
 # encoding: utf-8
 	<p>
 		<strong>サークル名:</strong>
-		<%= @circle.name %>
+		<%= @circle.circlename %>
 	</p>
 
 	<p>
@@ -19,20 +19,14 @@
 		<%= link_to @circle.url, @circle.url %>
 	</p>
 	
-	
-
-	<h2>お品書き追加:</h2>
-	<%= form_for([@circle, @circle.items.build]) do |f| %>
+	<h2>お品書き</h2>
+	<% @circle.items.each do |item| %>
 	<p>
-		<%= f.label '名前' %>
-		<%= f.text_field :itemname %>
-	</p>
-
-	<p>
-		<%= f.label '価格' %>
-		<%= f.number_field :price %>
+	<strong>お品物:</strong>
+	<%= item.itemname %>
 	</p>
 	<p>
-		<%= f.submit '登録'%>
+	<strong>値段:</strong>
+	<%= item.price %>
 	</p>
 	<% end %>

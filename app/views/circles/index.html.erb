@@ -7,6 +7,8 @@
 <table>
   <thead>
     <tr>
+      <th>日付</th>
+      <th>スペース</th>
       <th>サークル名</th>
       <th>URL</th>
       <th colspan="3"></th>
@@ -16,12 +18,14 @@
   <tbody>
     <% @circles.each do |circle| %>
       <tr>
+        <td><%= circle.date %></td>
+        <td><%= circle.space %></td>
         <td><%= circle.name %></td>
         <td><%= circle.url %></td>
-        <td><%= link_to '詳細', circle %></td>
-        <td><%= link_to 'お品書き登録', new_item_path %></td>
-        <td><%= link_to 'Edit', edit_circle_path(circle) %></td>
-        <td><%= link_to '消去', circle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'お品書き登録', circle %></td>
+        <td><%= link_to 'お品書き',circle_items_path(circle)  %>
+        <td><%= link_to '更新', edit_circle_path(circle) %></td>
+        <td><%= link_to '消去', circle, method: :delete, data: { confirm: '本当に消去しますか？' } %></td>
       </tr>
     <% end %>
   </tbody>

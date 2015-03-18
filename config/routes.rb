@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  resources :circles
+  
+
+  resources :circles do
+  resources :items
+  member do
+    get :circlelist
+  end
+end
 
   devise_for :users
   get 'homes/index'
