@@ -19,6 +19,7 @@
         <td><%= circle.name %></td>
         <td><%= circle.url %></td>
         <td><%= link_to '詳細', circle %></td>
+        <td><%= link_to 'お品書き登録', new_item_path %></td>
         <td><%= link_to 'Edit', edit_circle_path(circle) %></td>
         <td><%= link_to '消去', circle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

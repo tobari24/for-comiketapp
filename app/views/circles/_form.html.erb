@@ -1,4 +1,5 @@
 <%= form_for(@circle) do |f| %>
+
   <% if @circle.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@circle.errors.count, "error") %> prohibited this circle from being saved:</h2>
