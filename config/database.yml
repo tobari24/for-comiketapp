@@ -48,7 +48,9 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: comicmarket_test2_production
-  username: comicmarket_test2
-  password: <%= ENV['COMICMARKET_TEST2_DATABASE_PASSWORD'] %>
+  adapter: mysql2
+  encoding: utf8
+  username: sqale_a54426a51c
+  password: d3195b1c0799a1a6b55bde59660d7886a76c11c61d6804c6
+  database: sqale_a54426a51c
+  host: mysql001.sqale.jp

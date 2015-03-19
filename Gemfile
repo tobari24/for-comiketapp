@@ -30,7 +30,9 @@ gem 'devise'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
-
+group :production do
+  gem 'mysql2'
+end
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
