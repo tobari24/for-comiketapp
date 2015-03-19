@@ -1,10 +1,16 @@
 # encoding: utf-8
 
-<h1>コミックスペシャル６</h1>
+<h1>GROUP for コミケットスペシャル６</h1>
 <p>ようこそ！</p>
-<%= link_to "サークルリスト登録",'circles'%>
-<%= link_to "ログアウト", destroy_user_session_path, :method => :delete %>
-<%= link_to '初日リスト', circlelist_circle_path(1) %>
+
+<p><%= link_to "サークルリスト登録",'circles'%></p>
+<p><%= link_to "ログアウト", destroy_user_session_path, :method => :delete %></p>
+<p><%= link_to '初日リスト', circlelist_circle_path(1) %>
+<%= link_to '二日目リスト', circlelist_circle_path(2) %></p>
+<p><%= link_to 'グループチェックリスト(初日)', groupchecklist_circle_path(1) %>
+<%= link_to 'グループチェックリスト(二日目)', groupchecklist_circle_path(2) %></p>
+<p><%= link_to 'マイチェックリスト(初日)', mychecklist_circle_path(1) %>
+<%= link_to 'マイチェックリスト(二日目)', mychecklist_circle_path(2) %></p>
 <footer>
 	<p>ログイン中のユーザ : <%= current_user.username%></p>
 	<p>ログインID : <%= current_user.id %>

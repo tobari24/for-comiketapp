@@ -1,0 +1,20 @@
+<h2>マイチェックリスト</h2>
+
+
+<table>
+	<tr>
+		<th>1日目</th>
+		<th>スペース</th>
+		<th>サークル名</th>
+		<th>URL</th>
+	</tr>
+
+	<% @mylist.each do |circle| %>
+	<tr>
+		<td><%= circle.date %></td>
+		<td><%= circle.space %></td>
+		<td><%= circle.name %></td>
+		<td><%= link_to circle.url, circle.url %></td>
+		
+		
+	<% end %>	

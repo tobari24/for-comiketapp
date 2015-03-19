@@ -1,0 +1,19 @@
+# encoding: utf-8
+<h1>グループチェックリスト</h1>
+
+<table>
+	<tr>
+		<th>1日目</th>
+		<th>スペース</th>
+		<th>サークル名</th>
+		<th>URL</th>
+	</tr>
+
+	<% @lists.each do |list| %>
+	<tr>
+		<td><%= list.date %></td>
+		<td><%= list.space %></td>
+		<td><%= list.name %></td>
+		<td><%= link_to list.url, list.url %></td>
+		
+	<% end %>	

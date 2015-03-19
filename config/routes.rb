@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :circles do
   member do
     get :circlelist
+    get :groupchecklist
+    get :mychecklist
   end
   resources :items
   

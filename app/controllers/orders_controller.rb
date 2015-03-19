@@ -9,7 +9,10 @@ class OrdersController < ApplicationController
 		flash[:notice] = '登録しました。'
 	
 	end
-
+	def groupchecklist
+		@lists = Circle.items.orders.where("quantity not ?",nil)
+		
+	end
 	private
 	def order_params
 

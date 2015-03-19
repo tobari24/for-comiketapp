@@ -11,6 +11,15 @@ class CirclesController < ApplicationController
   def circlelist
     @circles = Circle.where(date: params[:id])
   end
+  
+  def mychecklist
+    @id = current_user.id 
+    @mylist = Circle.joins(items: :orders).uniq.where(["quantity is not ? and user_id = ? and date = ?",nil, @id, params[:id]])
+  end
+
+  def groupchecklist
+    @lists = Circle.joins(items: :orders).uniq.where(["quantity is not ? and date = ?",nil, params[:id]])
+  end
   # GET /circles/1
   # GET /circles/1.json
   def show
